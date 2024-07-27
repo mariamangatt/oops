@@ -1,0 +1,161 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+ int n,i,j,count;
+ cout<<"Enter a value";
+ cin>>n;
+ for(i=2;i<=n;i++)
+{
+if(n%i==0)
+{
+count=0;
+for(j=2;j<=i;j++)
+{
+if (i%j==0)
+count++;
+}
+if (count==1)
+cout<<"prime factor="<<i;
+}
+}
+}
+
+#include<iostream>
+#include<cmath>
+using namespace std;
+int main()
+{
+int n,temp,i,count=0,sum=0;
+cout<<"Enter a number";
+cin>>n;
+temp=n;
+while(n!=0)
+{
+n=n/10;
+count++;
+}
+n=temp;
+while(n!=0)
+{
+sum=sum+pow((n%10),count);
+n=n/10;
+}
+if (sum==temp)
+{
+cout<<temp<<"is a armstrong number";
+}
+else
+{
+cout<<"not armstrong";
+}
+}
+
+#include <iostream>
+using namespace std;
+  
+int fib(int n)
+ {
+    int a = 0, b = 1;
+    
+    for (int i = 0; i < n; ++i) {
+        cout << a << " ";
+        int next = a + b;
+        a = b;
+        b = next;
+    }
+    return 0;
+}
+
+int main()
+{
+    int n;
+    cout << "Fibonaci series till: ";
+    cin >> n;
+    fib(n);
+    return 0;
+}
+
+
+#include<iostream>
+using namespace std;
+int main()
+{
+    int n,temp,x,y,z,count=0,sum=0;
+    cout<<"enter a 3 digit number";
+    cin>>n;
+    temp=n;
+    while(n!=0)
+    {
+        n=n/10;
+        count++;
+    }
+    if(count=3)
+    {
+        x=temp/100;
+        z=temp%10;
+        y=temp%100;
+        y=y/10;
+   
+   
+    cout<<"first digit is"<<x<<"\n";
+    cout<<"middle digit is"<<y<<"\n";
+    cout<<"last digit is"<<z<<"\n";
+    cout<<"sum of first and last digit is"<<x+z<<"\n";
+    sum=x+z;
+    if (sum=y)
+    {
+    cout<<"middle digit is the sum of first and last digit";
+    }
+    else
+    cout<<"middle digit is not the sum of first and last digit";
+    }
+     else
+     cout<<"error in input";
+}
+
+#include<iostream>
+using namespace std;
+int main()
+{
+   int m,n,p,q,i,j,A[10][10],B[10][10],C[10][10];
+   cout<<"enter the rows and cols of Matrix A";
+   cin>>m>>n;
+   cout<<"enter the rows and cols of matrix B";
+   cin>>p>>q;
+   if((m!=p)|| (n!=q))
+   cout<<"addition not possible";
+   else
+   {
+       cout<<"enter values of matrix A";
+       for(i=0;i<m;i++)
+       {
+           for(j=0;j<n;j++)
+           {
+               cin>>A[i][j];
+           }
+       }
+       cout<<"enter values of matrix B";
+       for(i=0;i<p;i++)
+       {
+           for(j=0;j<q;j++)
+           {
+               cin>>B[i][j];
+           }
+       }
+       for(i=0;i<m;i++)
+       {
+           for(j=0;j<n;j++)
+           {
+               C[i][j]=A[i][j]+B[i][j];
+       
+           }
+       }
+       cout << "Sum of matrices\n";
+    for(i = 0; i < m; i++)
+    {    for (j = 0; j < n; j++)
+            cout << C[i][j] << "\n";
+       
+    }
+   }
+}
