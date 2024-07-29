@@ -1,0 +1,29 @@
+#include<iostream>
+using namespace std;
+class Car
+{
+public:
+char car_model[20];
+int car_number;
+char car_name[20];
+
+void getdata()
+{
+cout<<"enter car number";
+cin>>car_number;
+cout<<"enter the model and name of the car";
+cin>>car_model>>car_name;
+}
+void putdata()
+{
+cout<<"The model of the car is"<<car_model;
+cout<<"The number of the car is"<<car_number;
+cout<<"The name of the car is "<<car_name;
+}
+};
+int main()
+{
+Car S;
+S.getdata();
+S.putdata();
+}
