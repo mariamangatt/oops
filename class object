@@ -27,3 +27,64 @@ Car S;
 S.getdata();
 S.putdata();
 }
+
+
+#include<iostream>
+using namespace std;
+class Student
+{
+public:
+int RNo;
+char Sname[20];
+int Contact;
+char Email[30];
+float SemGPA[8];
+float TotalCGPA;
+int i;
+float sum=0;
+
+void getData()
+{
+cout<<"enter the roll number and contact";
+cin>>RNo>>Contact;
+cout<<"enter student name and email";
+cin>>Sname>>Email;
+cout<<"enter gpa for each semester";
+for(i=0;i<8;i++)
+{
+cin>>SemGPA[i];
+}
+}
+
+void compute()
+{
+for(i=0;i<8;i++)
+{
+sum=sum+SemGPA[i];
+}
+TotalCGPA=sum/8;
+}
+
+void display()
+{
+cout<<"roll number of the student is"<<RNo;
+cout<<"name of the student is"<<Sname;
+cout<<"contact number"<<Contact;
+cout<<"email is "<<Email;
+cout<<"sem gpa is\n";
+for (i=0;i<8;i++)
+{
+cout<<"sem gpa is"<<SemGPA[i];
+}
+cout<<" total cgpa is"<<TotalCGPA;
+}
+};
+int main()
+{
+Student S;
+S.getData();
+S.compute();
+S.display();
+}
+
+
