@@ -116,3 +116,56 @@ S.display();
 }
 
 
+#include<iostream>
+using namespace std;
+class Employee
+{
+public:
+int empid;
+char empname[40];
+float basic,da,it,gross_salary,net_salary;
+void getdata()
+{
+cout<<"enter employee id";
+cin>>empid;
+cout<<"enter employee name:";
+cin>>empname;
+cout<<"enter basic salary:";
+cin>>basic;
+}
+void compute()
+{
+da=basic*0.52;
+gross_salary=basic+da;
+it=gross_salary*0.30;
+net_salary=(basic+da)-it;
+}
+void display()
+{
+cout<<"employee details:\n";
+cout<<"employee id:"<<empid<<"\n";
+cout<<"employee name:"<<empname<<"\n";
+cout<<"da="<<da<<"\n";
+cout<<"it"<<it<<"\n";
+cout<<"net salary"<<net_salary<<"\n";
+}
+};
+int main()
+{
+Employee emp[100];
+int n,i;
+cout<<"enter max number of employee";
+cin>>n;
+for(i=0;i<n;i++)
+{
+emp[i].getdata();
+}
+for(i=0;i<n;i++)
+{
+emp[i].compute();
+}
+for(i=0;i<n;i++)
+{
+emp[i].display();
+}
+}
