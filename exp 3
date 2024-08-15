@@ -1,0 +1,150 @@
+#include<iostream>
+using namespace std;
+
+void sum(int a,int b)
+ {
+  cout<<"Sum of 2="<<(a+b)<<"\n";
+ }
+
+void sum(int a,int b,int c)
+ {
+  cout<<"Sum of 3="<<(a+b+c)<<"\n";
+ }
+
+void sum(int a,int b,int c,int d)
+ {
+  cout<<"Sum of 4="<<(a+b+c+d)<<"\n";
+ }
+
+int main()
+{
+ int a,b,c,d;
+ cout<<"Enter a:";
+ cin>>a;
+ cout<<"Enter b:";
+ cin>>b;
+ cout<<"Enter c:";
+ cin>>c;
+ cout<<"Enter d:";
+ cin>>d;
+
+ sum(a,b);
+ sum(a,b,c);
+ sum(a,b,c,d);
+}
+sum.cpp
+Displaying sum.cpp.
+
+#include<iostream>
+using namespace std;
+void swap_value(int x, int y)
+{
+    int temp;
+    temp = x;
+    x = y;
+    y = temp;
+    cout << "\nafter swap" << x << "\t" << y;
+}
+void swap_address(int *x, int *y)
+{
+    int temp;
+    temp = *x;
+    *x = *y;
+    *y = temp;
+   
+}
+void swap_reference(int &x, int &y)
+{
+    int temp;
+    temp = x;
+    x = y;
+    y = temp;
+   
+}
+
+int main()
+{
+
+    int x, y, n;
+
+    cout << "enter two values to be swapped\n";
+    cin >> x >> y;
+    cout << "\nfor CALL BY VALUE press 1";
+    cout << "\nfor CALL BY ADDRESS press 2";
+    cout << "\nfor CALL BY REFERENCE press 3\n";
+
+    cin >> n;
+    switch (n)
+    {
+    case 1:
+
+        cout << "\nCALL BY VALUE";
+        cout << "\nvalues before swap()\n" << x << "\t" << y;
+        swap_value(x, y);
+       
+       
+        break;
+    case 2:
+        cout << "\nCALL BY ADDRESS";
+        cout << "\nvalue before swap\n" << x << y;
+        swap_address(&x, &y);
+        cout << "\nafter swap\n" << x << y;
+        break;
+   
+    case 3:
+        cout << "\nCALL BY REFERENCE";
+        cout << "\nvalue before swap\n" << x << y;
+        swap_reference(x, y);
+        cout << "\nafter swap\n" << x << y;
+        break;
+    }
+ 
+}
+swap.cpp
+Displaying swap.cpp.
+
+#include<iostream>
+using namespace std;
+class Bank
+{
+ public:
+ char name[50];
+ long int acc;
+ char type[50]; 
+ float bal=0;
+void initial()
+{
+cout<<"Input Name, Account Number, Type and Current Balance\n";
+cin>>name>>acc>>type>>bal;
+}
+void deposit()
+{
+float dep;
+cout<<"Deposit cash\n";
+cin>>dep;
+bal=bal+dep;
+}
+void withdraw()
+{
+float with;
+cout<<"Current balance: "<<bal<<"\n";
+cout<<"Withdraw cash\n";
+cin>>with;
+bal=bal-with;
+}
+void current()
+{
+cout<<"Account Holder : "<<name<<"\n";
+cout<<"Current Balance : "<<bal<<"\n";
+}
+};
+int main()
+{
+Bank b;
+b.initial();
+b.deposit();
+b.withdraw();
+b.current();
+}
+bank2.cpp
+Displaying bank2.cpp.
