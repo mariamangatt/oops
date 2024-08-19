@@ -1,0 +1,172 @@
+#include <iostream>
+#include <string.h>
+using namespace std;
+
+class student
+{
+        int sid;
+        char sname[100];
+        float mark;
+        char grade;
+        
+
+public:
+        student(int s_id, char s_name[100], float m, char g)
+        {
+                sid = s_id;
+                strcpy(sname,s_name);
+                mark = m;
+                grade = g;
+              
+        }
+
+        
+        void show_data()
+        {
+                cout << "\n----------------------";
+                cout << "\nstudent No. : " << sid;
+                cout << "\nName : " << sname;
+                cout << "\nMark : " << mark;
+                cout << "\nGrade : " << grade<<"\n";
+        }
+};
+
+int main()
+{
+        int sid;
+        char name[100], grade;
+        float mark;
+        cout << "\n Enter Details: \n";
+        cout << "-----------------------";
+        cout << "\nStudent No. ";
+        cin >> sid;
+        cout << "\nName : ";
+        cin >> name;
+        cout << "\nMark : ";
+        cin >> mark;
+        cout << "\nGrade : ";
+        cin >> grade;
+
+        student s1(sid, name, mark, grade);
+        s1.show_data();
+       
+        return 0;
+}
+
+#include<iostream>
+using namespace std;
+class Sample
+{
+private:
+static int count;
+public:
+Sample()
+{
+++count;
+cout<<"object created\n"<<count;
+}
+~Sample()
+{
+count--;
+cout<<"object destroyed\n"<<count;
+}
+};
+int Sample::count;
+int main()
+{
+
+Sample obj1,obj2,obj3;
+return (0);
+}
+
+
+Experiment No: 4.1,4.2,4.3
+Mr. Mathews Abraham
+•
+Oct 8, 2023
+5 points
+Class comments
+Your work
+Turned in
+
+Screenshot from 2023-10-16 10-01-51.png
+Image
+
+exp43.cpp
+C++
+
+Screenshot from 2023-10-16 10-06-47.png
+Image
+
+exp41.cpp
+C++
+
+Screenshot from 2023-10-16 10-11-13.png
+Image
+
+cd.cpp
+C++
+Private comments
+#include <iostream>
+using namespace std;
+class Student
+{
+ int contact, semgpa[6], totalcgpa;
+char  mail[50];
+
+ void compute()
+        {	sum = 0;
+                for (i = 0; i < 6; i++)
+                {
+                        sum = sum + semgpa[i];
+                }
+                totalcgpa = sum / 6;
+                cout << "total cgpa :" << totalcgpa;
+        }
+public:
+static int count;
+        int Rno, sum, i;
+        char sname[20];
+Student()
+{
+	Rno = count;
+	count++;
+}
+        void getdata()
+        {
+               
+                cout << "\n\nenter the name:";
+                cin>>sname;
+                cout << "enter the email:";
+                cin >> mail;
+                cout << "enter the 6 sem gpa:";
+                for (i = 0; i < 6; i++)
+                {
+                        cin >> semgpa[i];
+                }
+compute();
+        }
+        void putdata()
+        {
+                cout << "\n\nroll no:" << Rno;
+                cout << "\nname :" << sname;
+                cout << "\nemail :" << mail;
+		cout << "total cgpa :" << totalcgpa;
+        } 
+};
+int Student::count = 1;
+int main()
+{
+        Student s[30]; 
+  int n, i;
+  cout << "Enter Number of students: ";
+  cin >> n;
+   
+
+  for(i = 0; i < n; i++) 
+    s[i].getdata();
+
+
+  for(i = 0; i < n; i++) 
+    s[i].putdata();
+}
