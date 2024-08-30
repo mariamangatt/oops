@@ -1,0 +1,267 @@
+#include <iostream>
+using namespace std;
+
+class Complex
+{
+private:
+	int real,img;
+
+
+public:
+Complex(int a, int b)
+{
+	cout<<"Complex No. : "<<a<<" + "<<b<<"i\n";
+	real = a;
+	img = b;
+}
+
+friend void add(Complex a,Complex b);
+
+friend void sub(Complex a,Complex b);
+};
+
+void add(Complex a, Complex b)
+{
+	cout<<"Sum:";
+	cout<<a.real+b.real<<"+";
+	cout<<b.img+a.img<<"i\n";
+}
+
+void sub(Complex a, Complex b)
+{
+	cout<<"Diff: ";
+	cout<<a.real-b.real<<"-";
+	cout<<b.img-a.img<<"i\n";
+}
+
+int main()
+{
+int l,m,n,o;
+cout<<"enter first pair of number";
+cin>>l>>m;
+cout<<"enter second pair of number";
+cin>>n>>o;	
+Complex a(l,m), b(n,o);
+	int ch=0;
+	cout<<"Enter 0 for addition and 1 for subtraction 3 for exit:";
+	cin>>ch;
+       
+	switch(ch)
+	{
+		case 0:
+			add(a,b);
+			break;
+		case 1:
+			sub(a,b);
+			break;
+           case 3:
+                  cout<<"exit";
+                  break;
+	}
+
+}
+
+#include<iostream>
+using namespace std;
+class Student {
+private:
+    int mark1, mark2, mark3, total_marks;
+public:
+
+   
+    void display() {
+        total_marks = mark1 + mark2 + mark3;
+        cout << "\nMarks 1: " << mark1;
+        cout << "\nMarks 2: " << mark2;
+        cout << "\nMarks 3: " << mark3;
+        cout << "\nTotal Marks: " << total_marks << "\n";
+    }
+    friend class Teacher;
+};
+
+class Teacher {
+public:
+    void entermarks(Student &s) {
+        cout << "Enter Mark1, Mark2, Mark3: ";
+        cin >> s.mark1 >> s.mark2 >> s.mark3;
+    }
+};
+int main() {
+    int n;
+    cout << "Enter the number of students: ";
+    cin >> n;
+    Student students[n];
+    Teacher t;
+
+    for (int i = 0; i < n; i++) {
+        cout << "Enter marks for student " << i + 1 << ":\n";
+        t.entermarks(students[i]);
+    }
+
+    cout << "Details of all students:\n";
+    for (int i = 0; i < n; i++) {
+        cout<<"Roll Number:"<<i+1;
+        students[i].display();
+    }
+}
+
+
+#include <iostream>
+using namespace std;
+
+class Matrix
+{
+int a[3][3];
+
+public:
+Matrix()
+{
+    for(int i=0;i<3;i++)
+    for(int j=0;j<3;j++)
+   	 a[i][j]=0;
+}
+
+Matrix(int b[3][3])
+{
+    for(int i=0;i<3;i++)
+    for(int j=0;j<3;j++)
+   	 a[i][j]=b[i][j];
+}
+
+Matrix(bool b)
+{
+    cout<<"Enter 9 elements for 3x3 matrix:\n";
+
+    for(int i=0;i<3;i++)
+    for(int j=0;j<3;j++)
+   	 cin>>a[i][j];
+}
+
+~Matrix()
+{
+    //cout<<"Matrix is deleted";
+}
+
+void display()
+{
+    cout<<"The elements of 3x3 matrix are:\n";
+
+    for(int i=0;i<3;i++)
+    {
+    for(int j=0;j<3;j++)
+   	 cout<<a[i][j]<<"\t";
+
+    cout<<"\n";
+}
+}
+
+void add(Matrix b,Matrix a)
+{
+    int c[3][3];
+    cout<<"The Sum Matrix is: \n";
+    for(int i=0;i<3;i++)
+    {
+   	 for(int j=0;j<3;j++)
+   	 {
+   		 c[i][j]=a.a[i][j]+b.a[i][j];
+   		 cout<<c[i][j]<<"\t";
+
+   	 }
+   	 cout<<"\n";
+    }
+}
+
+void subtract(Matrix b,Matrix a)
+{
+    int c[3][3];
+    cout<<"The Diff Matrix is: \n";
+    for(int i=0;i<3;i++)
+    {
+   	 for(int j=0;j<3;j++)
+   	 {
+   		 c[i][j]= a.a[i][j]-b.a[i][j];
+   		 cout<<c[i][j]<<"\t";
+
+   	 }
+   	 cout<<"\n";
+    }
+}
+void transpose(Matrix a, Matrix b)
+{
+    int c[3][3];
+    cout<<"The Transpose is: \n";
+    for(int i=0;i<3;i++)
+    {
+   	 for(int j=0;j<3;j++)
+   	 {
+   		 c[i][j]=a.a[j][i];
+   		 cout<<c[i][j]<<"\t";
+   	 }
+   	 cout<<"\n";
+    }
+    cout<<"\n";
+    for(int i=0;i<3;i++)
+    {
+   	 for(int j=0;j<3;j++)
+   	 {
+   		 c[i][j]=b.a[j][i];
+   		 cout<<c[i][j]<<"\t";
+   	 }
+   	 cout<<"\n";
+    }
+}
+
+};
+int main()
+{
+    int a2[3][3];
+    cout<<"Enter 9 elements for 3x3 matrix:\n";
+    for(int i=0;i<3;i++)
+    for(int j=0;j<3;j++)
+   	 cin>>a2[i][j];
+    
+    Matrix m3(true);
+    Matrix m2(a2);
+    
+    int ch;
+    do {
+    cout << "\nMenu:\n";
+    cout << "1. Display\n";
+    cout << "2. Matrix Addition\n";
+    cout << "3. Matrix Subtraction\n";
+    cout << "4. Matrix Transpose\n";
+    cout << "0. Exit\n";
+    cout << "Enter your choice: ";
+    cin >> ch;
+
+    switch (ch) {
+    	case 1:
+   	 m2.display();
+   	 m3.display();
+   	 break;
+    	case 2:
+   	 m2.add(m2,m3);
+       	cout << "Matrix addition completed.\n";
+   	 break;
+    	case 3:
+   	 m2.subtract(m2,m3);
+   	 cout << "Matrix subtraction completed.\n";
+   	 break;
+    	case 4:
+   	 m2.transpose(m2,m3);
+   	 cout << "Matrix transpose completed.\n";
+   	 break;
+    	case 0:
+   	 cout << "Exiting program.\n";
+   	 break;
+    	default:
+   	 cout << "Invalid choice. Please try again.\n";
+   	 break;
+    }
+
+    } while (ch != 0);
+
+    return 0;
+}
+
+
