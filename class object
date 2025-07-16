@@ -5,7 +5,7 @@ class Car
 public:
 char car_model[20];
 int car_number;
-char car_name[20];
+char car_name[20]; 
 
 void getdata()
 {
