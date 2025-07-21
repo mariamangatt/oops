@@ -1,7 +1,7 @@
 #include<iostream>
 using namespace std; 
 
-void sum(int a,int b)
+void sum(int a,int b) 
  {
   cout<<"Sum of 2="<<(a+b)<<"\n";
  }
