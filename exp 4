@@ -4,7 +4,7 @@ using namespace std;
 
 class student
 {
-        int sid;
+        int sid; 
         char sname[100];
         float mark;
         char grade;
