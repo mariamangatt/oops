@@ -7,7 +7,7 @@ class student
         int sid;  
         char sname[100];
         float mark;
-        char grade;
+        char grade; 
         
 
 public:
